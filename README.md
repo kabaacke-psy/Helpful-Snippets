@@ -1,39 +1,49 @@
-# Project Title
+# Helpful Snippets
 
 ## Description
 
+**What this is:**
+- Tips, Tricks, and Suggestions
+    This repository contains commented segments of code which can be copied, pasted, and modified in order to expidite the generation of code to run analytical pipelines on or off of a cluster environment. 
+- Collaborative
+    This is a collaborative project. The code is not written in isolation and has been inspired by countless other GitHub repositories, Stack Overflow posts, Bogs, and helpful collaborators from academia and industry. All users are encourages to submit their additions through pull requests. Be sure to add your name to the author list in your pull request!
+
+**What this is NOT**
+- A comprehensive guide.
+- A replacement for Googling issues and generating your own creative solutions.
+- The only way of doing these things.
+- The 'best' way of doing things.
+- Proprietory in any way.
+- Exclusive to any user or group.
 
 ## Getting Started
 
 ### Dependencies
+The contents of this repository cover a range of topics, and you may only require a small subset of these dependancies to complete your pipeline. All code has been tested using the following specifications
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+- Python            3.8.5 and 3.9.2
+    - pandas        1.2.2
+    - numpy         1.20.1
+    - paramiko      2.7.2
+    - scp           0.14.1
+    - DateTime      4.3
+    - joblib        1.0.1
+- R                 4.0.4
+    - reticulate    1.22
 
 ## Help
-
-```
-command to run if program contains helper info
-```
+Most files will contain a commented link or links to further information. If your questions are not answered using the link(s), try searching your issue. If you find an answer to your question, consider adding the information you found to the repository and submitting a pull request! You can answer the question for the next user!
 
 ## Authors
-
-Contributors names and contact info
-
+- Kyle Baacke (kbaacke2@illinois.edu)
 
 ## Version History
 
-* 0.1
-    * Initial Release
+*Unreleased*
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the Unlicense - see the LICENSE.md file for details
 
 ## Acknowledgments
 
