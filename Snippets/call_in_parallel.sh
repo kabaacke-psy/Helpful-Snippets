@@ -5,18 +5,18 @@ lscpu
 
 
 # Always make sure you will not cause problems for other users by checking to see if anyone else is currenlty using the same machine.
-# You can do this and leanr more about the currenly memory availability using the following command.
+# You can do this and learn more about the currenlt memory availability using the following command.
 
 top
 
-# This will give you an active diplay of the processes currently running on the machine, including their CPU and memory usage, as well as how long they have been running
+# This will give you an active diplay of the processes currently running on the machine, including CPU and memory usage and runtime.
 # Use q to exit the top display.
 
 q
 
 # Now that you know what you have to work with, you need to set up a function to run in paralell
 # The following function takes three arguements (subject, time, and run, in that order).
-# It then uses these arguements to call a python function (nifty2numpy_parcellation.py) with three addiitonal arguements
+# It then uses these arguements to call a python function (nifty2numpy_parcellation.py).
 OUTDIR2=/mnt/usb1/HCP_1200_ICA-AROMA
 TIME=tfMRI_MOTOR
 parcellate(){
@@ -32,14 +32,14 @@ parcellate(){
     --metadata /mnt/usb1/Code/MSC_HCP/
 }
 
-# Now we need a list of subjects to iterate through. The following command creates a list out of each folder in the directory we assigned to OUTDIR2
+# We need a list of subjects to iterate through. The following command creates a list out of each folder in the directory we assigned to OUTDIR2
 SUBLIST=$(ls $OUTDIR2)
-# Now lets assign the number of threads to use as a variable
+# Now assign the number of threads to use as a variable
 N=10
-# Now we can iterate through the subjects in $SUBLIST and the runs within eahc subject using nested for loops
+# We can iterate through the subjects in $SUBLIST and the runs within each subject using nested for loops
 for SUBJECT in $SUBLIST; do
   for RUN in RL LR; do
-    # First we call our function for a SUBJECT, RUN 
+    # First we call the function for a SUBJECT, RUN to start one process.
     parcellate "$SUBJECT" "$TIME" "$RUN" &
     # Then we check to see if the number of processes we have running matches the $N value that we set
     if [[ $(jobs -r -p | wc -l) -ge $N ]]; then
