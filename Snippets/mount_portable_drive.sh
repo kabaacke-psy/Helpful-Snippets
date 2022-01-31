@@ -8,4 +8,5 @@ lsblk
 # Example to mount to a device to a shared directory with wheel privilages
 sudo mount /dev/sda2 /mnt/usb1
 
+# You can check the contents of the device you just mounted using the ls command.
 ls /mnt/usb1
