@@ -35,7 +35,8 @@ The contents of this repository cover a range of topics, and you may only requir
 Most files will contain a commented link or links to further information. If your questions are not answered using the link(s), try searching your issue. If you find an answer to your question, consider adding the information you found to the repository and submitting a pull request! You can answer the question for the next user!
 
 ## Authors
-- Kyle Baacke (kbaacke2@illinois.edu)
+- Kyle Baacke; kbaacke2@illinois.edu; https://github.com/kabaacke-psy
+
 
 ## Version History
 
@@ -46,4 +47,11 @@ Most files will contain a commented link or links to further information. If you
 This project is licensed under the Unlicense - see the LICENSE.md file for details
 
 ## Acknowledgments
+It takes a village, and there have been countless direct and indirect intellectual contributions to this work outside of the list of authors. A huge thanks to all of these people for the feedback, inspiration, and facilitation of the processes involved in the creation of this work!
 
+- Corey Richier
+- Megan Finnegan
+- Wendy Heller
+- Gregory Miller
+- Ramsey Wilcox
+- Paul Bogden
