@@ -1,3 +1,12 @@
+# @Authors: 
+#   Kyle Baacke; kbaacke2@illinois.edu; https://github.com/kabaacke-psy
+# @DateCreated: 02/07/2022
+# @DateUpdated: 02/07/2022
+# Description:
+#   {DESCRIPTION}
+# Notes and Qualifiers:
+#   {NOTES}
+
 # Running terminal commans in parallel is a great way to take advantage of the compute resources available to you.
 # Before you run anyting in parallel, you should first establish how many CPUs ara avialble for use.
 # The following command will give you details about the CPUs on the current machine
