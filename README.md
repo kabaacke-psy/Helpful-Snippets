@@ -4,9 +4,12 @@
 
 **What this is:**
 - Tips, Tricks, and Suggestions
+
     This repository contains commented segments of code which can be copied, pasted, and modified in order to expidite the generation of code to run analytical pipelines on or off of a cluster environment. 
+ 
 - Collaborative
-    This is a collaborative project. The code is not written in isolation and has been inspired by countless other GitHub repositories, Stack Overflow posts, Bogs, and helpful collaborators from academia and industry. All users are encourages to submit their additions through pull requests. Be sure to add your name to the author list in your pull request!
+
+    This is a collaborative project. The code is not written in isolation and has been inspired by countless other GitHub repositories, Stack Overflow posts, Blogs, and helpful collaborators from academia and industry. All users are encouraged to submit their additions through pull requests. Be sure to add your name to the author list in your pull request! (for information on pull requests, please see here(insert link here).
 
 **What this is NOT**
 - A comprehensive guide.
