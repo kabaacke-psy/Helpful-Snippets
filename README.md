@@ -5,7 +5,7 @@
 **What this is:**
 - Tips, Tricks, and Suggestions
 
-    This repository contains commented segments of code which can be copied, pasted, and modified in order to expidite the generation of code to run analytical pipelines on or off of a cluster environment. 
+    This repository contains commented segments of code which can be copied, pasted, and modified in order to expedite the generation of code to run analytical pipelines on or off of a cluster environment. 
  
 - Collaborative
 
@@ -16,13 +16,13 @@
 - A replacement for Googling issues and generating your own creative solutions.
 - The only way of doing these things.
 - The 'best' way of doing things.
-- Proprietory in any way.
+- Proprietary in any way.
 - Exclusive to any user or group.
 
 ## Getting Started
 
 ### Dependencies
-The contents of this repository cover a range of topics, and you may only require a small subset of these dependancies to complete your pipeline. All code has been tested using the following specifications
+The contents of this repository cover a range of topics, and you may only require a small subset of these dependencies to complete your pipeline. All code has been tested using the following specifications:
 
 - Python            3.8.5 and 3.9.2
     - pandas        1.2.2
