@@ -1,0 +1,1 @@
+{"atlas_name": "Schaefer2018_200Parcels_7Networks_order_FSLMNI152_2mm", "confounds": ["Movement_RelativeRMS", "trans_x_dt", "trans_y_dt", "trans_z_dt", "rot_x_dt", "rot_y_dt", "rot_z_dt", "trans_dx_dt", "trans_dy_dt", "trans_dz_dt", "rot_dx_dt", "rot_dy_dt", "rot_dz_dt"], "n_parcels": 200, "smoothed": false, "Note": "This is an additional note"}
