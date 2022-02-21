@@ -16,15 +16,16 @@ use_python('C:/Users/kyle/AppData/Local/Programs/Python/Python39/python.exe',req
 ```
 
 # Description:
-   There are at least as many naming conventions for files as there are researchers. Contrary to most naming conventions using abbreviations stringed together, this snippet describes a way to track as many researcher degrees of freedom (analysis metadata) as you would like, without lengthening the file name. Instead of attaching this metadata information to each file by embedding the information in the file name, the prefix or suffix on the file name is a unique identifier \{UID\} that points to a separate metadata file. This metadata file (\{UID\}_metadata.json) can then contain as many key, value pairs as you want for any given pipeline. This removes any enticement to limit the number of metadata attributes saved on each run, further enabling reproducibility through clarity in analytic choices.
+   There are at least as many naming conventions for files as there are researchers. Contrary to most naming conventions using abbreviations stringed together, this snippet describes a way to track as many researcher degrees of freedom (analysis metadata) as you would like, without lengthening the file name. Instead of attaching this metadata information to each file by embedding the information in the file name, the prefix or suffix on the file name is a unique identifier \{UID\} that points to a separate metadata file. This metadata file (\{UID\}_metadata.json) can contain as many key, value pairs as you want for any given pipeline. This removes any enticement to limit the number of metadata attributes saved on each run, further enabling reproducibility through clarity in analytic choices.
 
 # 0) Setup
+
 ```{python}
 import json
 import hashlib
 import os
 import pandas as pd
-# Get the file deliminer for the OS you are working on
+# Get the file delimiter for the OS you are working on
 sep = os.path.sep
 # Get the folder containing your python script
 # source_path = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) + sep # This only works when run as .py rather than in .RMD
@@ -32,10 +33,10 @@ source_path = 'S:\\Code\\Helpful-Snippets\\Snippets\\'
 ```
 
 # 1) Generate metadata dictionary
+
+Your metadata will initially be stored as a python dictionary containing key, value pairs. The objects can be base python classes like strings, lists, integers, and bools. Do not use Pandas DataFrame objects
 ```{python}
-# Your metadata will initially be stored as a python dictionary containing key, value pairs 
 metadata = {
-  # The objects can be base python classes like strings, lists, integers, and bools. Do not use Pandas DataFrame objects
   'atlas_name':'Schaefer2018_200Parcels_7Networks_order_FSLMNI152_2mm',
   'confounds': [
     "Movement_RelativeRMS",
@@ -47,31 +48,37 @@ metadata = {
   'n_parcels':200,
   'smoothed':False
 }
-
-# You can also add values to the dictionary after it has been created 
+```
+You can also add values to the dictionary after it has been created 
+```{python}
 metadata['Note'] = 'This is an additional note'
 print(metadata)
 ```
 
 # 2) Generate the unique identifier for the run
+
+Once you have settled on the metadata that you will use for that run, you can use the 
 ```{python}
-# Once you have settled on the metadata that you will use for that run, you can use the 
 dhash = hashlib.md5()
 encoded = json.dumps(metadata, sort_keys=True).encode()
 dhash.update(encoded)
-# You can change the 8 value to change the number of characters in the unique id via truncation.
+```
+You can change the 8 value to change the number of characters in the unique ID via truncation. This ID is procedurally generated based on the metadata dictionary provided. If you input the same metadata, you will get the same run_uid from this function every time. Any changes to the dictionary will result in a new, unique identifier. Saving 8 characters keeps the ID short while still maintaining a low likelihood of duplicate IDs (4,294,967,296 possible values).
+```{python}
 run_uid = dhash.hexdigest()[:8]
 print(run_uid)
 ```
+
 # 3) Save metadata file
+
 ```{python}
 with open(f'{source_path}{run_uid}_metadata.json', 'w') as outfile:
   json.dump(metadata, outfile)
 print(f'{source_path}{run_uid}_metadata.json')
 ```
 # 4) Make a folder specific to each output
+
 ```{python}
-# Create an output folder (out_dir)
 try:
   out_dir = f'{source_path}Output{sep}{run_uid}{sep}'
   os.makedirs(out_dir)
@@ -87,9 +94,10 @@ dummy_output = pd.DataFrame()
 dummy_output.to_csv(f'{out_dir}{run_uid}_empty_csv_example.csv', index=False)
 ```
 
-# 4) Programatically read in the metadata file
+# 5) Programatically read in the metadata file
+
+In addition to being able to read the metadata json objects in any text editor (e.g. notepad), you can also read the information in when using the output from an analysis.
 ```{python}
-# In addition to being able to read the metadata json objects in any text editor (e.g. notepad), you can also read the information in when using the output from an analysis.
 metadata_2 = json.load(open(f'{source_path}{run_uid}_metadata.json'))
 print(metadata_2)
 print(metadata_2['atlas_name'])
