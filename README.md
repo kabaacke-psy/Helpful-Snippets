@@ -9,7 +9,7 @@
  
 - Collaborative
 
-    This is a collaborative project. The code is not written in isolation and has been inspired by countless other GitHub repositories, Stack Overflow posts, Blogs, and helpful collaborators from academia and industry. All users are encouraged to submit their additions through pull requests. Be sure to add your name to the author list in your pull request! (for information on pull requests, please see here(insert link here).
+    This is a collaborative project. The code is has been inspired by countless other GitHub repositories, Stack Overflow posts, Blogs, and helpful collaborators from academia and industry. All users are encouraged to submit their additions through pull requests. Be sure to add your name to the author list in your pull request! (for information on pull requests, please see here(insert link here).
 
 **What this is NOT**
 - A comprehensive guide.
