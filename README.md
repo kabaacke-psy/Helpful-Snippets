@@ -47,6 +47,12 @@ Most files will contain a commented link or links to further information. If you
 - Runnables
 
   *Files configured to be run via command line interface*
+  - *aparc_aseg_parcellation_runtime.py*:
+
+    Converts files from .nii or .nii.gz to numpy files representing the BOLD timeseries within ROIs defined by a a segmentation file (aparc+aser.nii.gz) and a reference file specifying which values are to be used.All extra arguments will be passes as Notes values in the meta-data json file. Use *python3 aparc_aseg_parcellation_runtime.py --help* for more information
+  - *nifty2numpy_parcellation.py*:
+
+    Converts files from .nii or .nii.gz to numpy files representing the BOLD timeseries within ROIs defined by parcellation atlases. All parcellations are based on the assumption of FSLMNI_152_2MM space input files.\nAll extra arguments will be passes as Notes values in the meta-data json file. Use *python3 nifty2numpy_parcellation.py --help* for more information
 - Snippets
 
   *Notebooks or code files documenting how to accomplish various processes*
@@ -61,6 +67,9 @@ Most files will contain a commented link or links to further information. If you
     - *fmri_smoothing_parallel_python.ipynb*: 
 
       You may find yourself wanting to run a process in parallel (i.e. multiple processes running simultaneously) within a python script. In this example, we use a parallel for loop in python to smooth fMRI images using nilearn. The process can be divided into 3 main steps: 1) setting up string patterns to read and write files, 2) defining a function to run in parallel, and 3) calling the function in parallel. This snippet will go through each process with an example which callas a python script using variables in nested for loops.
+
+  - Data Management
+
 
 ## Authors
 - Kyle Baacke; kbaacke2@illinois.edu; https://github.com/kabaacke-psy
