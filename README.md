@@ -58,7 +58,9 @@ Most files will contain a commented link or links to further information. If you
     - *calling_in_parallel_shell.ipynb*: 
     
       This snippet provides an example of how to do so without the use of any non-generic packages or functions within a bash environment. This can enable you to make full use of the compute resources available without the additional overhead of installing other tools. The process can be divided into 3 main steps: 1) establishing the resource pool available to use, 2) defining a function to run in parallel if there are multiple components of a process that need to be run for each iteration, and 3) calling the function in parallel. This snippet will go through each process with an example which callas a python script using variables in nested for loops.
+    - *smoothing_parallel_python.ipynb*: 
 
+      You may find yourself wanting to run a process in parallel (i.e. multiple processes running simultaneously) within a python script. In this example, we use a parallel for loop in python to smooth fMRI images using nilearn. The process can be divided into 3 main steps: 1) setting up string patterns to read and write files, 2) defining a function to run in parallel, and 3) calling the function in parallel. This snippet will go through each process with an example which callas a python script using variables in nested for loops.
 
 ## Authors
 - Kyle Baacke; kbaacke2@illinois.edu; https://github.com/kabaacke-psy
