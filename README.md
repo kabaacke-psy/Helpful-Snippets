@@ -62,10 +62,12 @@ Most files will contain a commented link or links to further information. If you
 
       You may find yourself wanting to run a process in parallel (i.e. multiple processes running simultaneously) within a python script. In this example, we use a parallel for loop in python to smooth fMRI images using nilearn. The process can be divided into 3 main steps: 1) setting up string patterns to read and write files, 2) defining a function to run in parallel, and 3) calling the function in parallel. This snippet will go through each process with an example which callas a python script using variables in nested for loops.
 
-  - Data Management
-    - *cluster_file_transfer.ipynb*:
+  - *screen_session.ipynb*:
 
+    This snippet goes over basic usage of the screen command, which allows you to save your progress in a terminal session when accessing the cluster locally of via SSH.
+  - *file_transfer_via_py_ssh.ipynb*:
 
+    You may want to transfer a file or list of files to or from the cluster without using a physical drive. This can be accomplished over SSH using SCP. Alternatively, you can run SCP via python in order to streamline your analysis or data management processes. This snippet provides examples of how this can be accomplished.
 - In Progress
 
   *Files or placeholders for scripts which have not been completed or fully documented*

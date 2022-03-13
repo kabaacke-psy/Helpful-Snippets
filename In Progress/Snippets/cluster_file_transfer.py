@@ -21,10 +21,10 @@ import getpass # Used for getting password from the user in a prompt rather than
 # The following line is ot enable the script to work on all opreating systems by dynamically assigning what the file deliminer will be.
 sep = os.path.sep
 
-# This line is to specify what the deliminer is on the remote system. Sinc ethe cluster is linux, the following should always work
-dest_sep = '/'
+# This line is to specify what the deliminer is on the remote system. Since the cluster is linux, the following should always work
+remote_sep = '/'
 
-# The following function will create a cirtual SSH session to be used ot call the SCP commands.
+# The following function will create a virtual SSH session to be used ot call the SCP commands.
 def createSSHClient(server, port, user, password):
     client = paramiko.SSHClient()
     client.load_system_host_keys()
