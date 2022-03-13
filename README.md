@@ -38,18 +38,12 @@ The contents of this repository cover a range of topics, and you may only requir
 Most files will contain a commented link or links to further information. If your questions are not answered using the link(s), try searching your issue. If you find an answer to your question, consider adding the information you found to the repository and submitting a pull request! You can answer the question for the next user!
 
 ## Contents
-- In Progress
-
-  *Files or placeholders for scripts which have not been completed or fully documented*
-- Resources
-
-  *Dependencies or references for snippets and runnables*
 - Runnables
 
   *Files configured to be run via command line interface*
   - *aparc_aseg_parcellation_runtime.py*:
 
-    Converts files from .nii or .nii.gz to numpy files representing the BOLD timeseries within ROIs defined by a a segmentation file (aparc+aser.nii.gz) and a reference file specifying which values are to be used.All extra arguments will be passes as Notes values in the meta-data json file. Use *python3 aparc_aseg_parcellation_runtime.py --help* for more information
+    Converts files from .nii or .nii.gz to numpy files representing the BOLD timeseries within ROIs defined by a a segmentation file (aparc+aseg.nii.gz) and a reference file specifying which values are to be used.All extra arguments will be passes as Notes values in the meta-data json file. Use *python3 aparc_aseg_parcellation_runtime.py --help* for more information
   - *nifty2numpy_parcellation.py*:
 
     Converts files from .nii or .nii.gz to numpy files representing the BOLD timeseries within ROIs defined by parcellation atlases. All parcellations are based on the assumption of FSLMNI_152_2MM space input files.\nAll extra arguments will be passes as Notes values in the meta-data json file. Use *python3 nifty2numpy_parcellation.py --help* for more information
@@ -69,8 +63,15 @@ Most files will contain a commented link or links to further information. If you
       You may find yourself wanting to run a process in parallel (i.e. multiple processes running simultaneously) within a python script. In this example, we use a parallel for loop in python to smooth fMRI images using nilearn. The process can be divided into 3 main steps: 1) setting up string patterns to read and write files, 2) defining a function to run in parallel, and 3) calling the function in parallel. This snippet will go through each process with an example which callas a python script using variables in nested for loops.
 
   - Data Management
+    - *cluster_file_transfer.ipynb*:
 
 
+- In Progress
+
+  *Files or placeholders for scripts which have not been completed or fully documented*
+- Resources
+
+  *Dependencies or references for snippets and runnables*
 ## Authors
 - Kyle Baacke; kbaacke2@illinois.edu; https://github.com/kabaacke-psy
 
