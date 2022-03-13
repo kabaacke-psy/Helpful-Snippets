@@ -37,6 +37,23 @@ The contents of this repository cover a range of topics, and you may only requir
 ## Help
 Most files will contain a commented link or links to further information. If your questions are not answered using the link(s), try searching your issue. If you find an answer to your question, consider adding the information you found to the repository and submitting a pull request! You can answer the question for the next user!
 
+## Contents
+- In Progress
+  *Files or placeholders for scripts which have not been completed or fully documented*
+- Resources
+  *Dependencies or references for snippets and runnables*
+- Runnables
+  *Files configured to be run via command line interface*
+  - 
+    **
+- Snippets
+  *Notebooks or code files documenting how to accomplish various processes*
+  - Metadata Tracking
+    - uid_metadata_tracking.ipynb: *There are at least as many naming conventions for files as there are researchers. Contrary to most naming conventions using abbreviations stringed together, this snippet describes a way to track as many researcher degrees of freedom (analysis metadata) as you would like, without lengthening the file name. Instead of attaching this metadata information to each file by embedding the information in the file name, the prefix or suffix on the file name is a unique identifier \{UID\} that points to a separate metadata file. This metadata file (\{UID\}_metadata.json) can contain as many key, value pairs as you want for any given pipeline. This removes any enticement to limit the number of metadata attributes saved on each run, further enabling reproducibility through clarity in analytic choices.*
+  - Running in Parallel
+    - 
+    - 
+
 ## Authors
 - Kyle Baacke; kbaacke2@illinois.edu; https://github.com/kabaacke-psy
 
