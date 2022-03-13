@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import nibabel as nib
 from nilearn import datasets
@@ -6,17 +7,18 @@ from nilearn.input_data import NiftiMapsMasker
 import datetime as dt
 import argparse
 import pandas as pd
-import json # Not on Cluster
-import hashlib # Not on Cluster
+import json
+import hashlib
 import numpy as np
 import sys
 
 sep = os.path.sep
 source_path = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) + sep
+reference_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../Resources','Parcellation')) + sep
 
 def parse_args(args):
   parser = argparse.ArgumentParser(
-      description='Converts files from .nii or .nii.gz to numpy files based on parcellation atlasses.\nAll Parcellations are based on the assumption of FSLMNI_152 space input files.\nAll extra arguments will be passes as Notes values in the meta-data json file.\n Example: \n\tpython3 nifty2numpy_parcellation.py -input S:\\MSC\\ds000224-Output\\sub-MSC01\\MNINonLinear\\Results\\ses-func01_task-motor_run-01_bold\\ses-func01_task-motor_run-01_bold.nii.gz -atlas Schaefer2018_200Parcels_7Networks_order_FSLMNI152_2mm --confounds S:\\MSC\\ds000224-Output\\sub-MSC01\\MNINonLinear\\Results\\ses-func01_task-motor_run-01_bold\\sub-MSC01_ses-func01_01_full-confounds.csv --confound_subset Movement_RelativeRMS --metadata S:\\MSC\\ds000224-Output\\ \'Example note for netadata json\''
+      description='Converts files from .nii or .nii.gz to numpy files representing the BOLD timeseries within ROIs defined by a a segmentation file (aparc+aser.nii.gz) and a reference file specifying which values are to be used.\n\nAll extra arguments will be passes as Notes values in the meta-data json file.\n Example: \n\tpython3 /data/r2-home/kbaacke/usb1/Code/MSC_HCP/Parcellation/aparc_aseg_parcellation_runtime.py -input /mnt/usb1/HCP_1200/100307/MNINonLinear/Results/tfMRI_MOTOR_RL/tfMRI_MOTOR_RL.nii.gz -seg_path /mnt/usb1/HCP_1200/100307/MNINonLinear/aparc+aseg.nii.gz --metadata /data/r2-home/kbaacke/usb1/ \'No ICA-Aroma\''
     )
   parser.add_argument(
     "-input", help='Input nifty file.',required=True
@@ -27,6 +29,12 @@ def parse_args(args):
   parser.add_argument(
     "--metadata", help='Directory in which to store the json file with information about parcellation options.\nIf None, numpy files will be saved in the same directory as the input file.\n*It is strongly reccomended to choose a base directory, not a subject directory. Choosing a subject directory will result in many json files being generated.',required=False
   )
+  parser.add_argument(
+    "--selection_path",
+    help=f'Path to the .xlsx file indicating which values to use. Default is {reference_path}',
+    required=False, default=reference_path
+  )
+  
   parser.add_argument(
     "-seg_path",
     help='''
@@ -44,7 +52,7 @@ def parse_args(args):
     help='''
       USe this to selecet a subset of the columns in the --confounds .csv file
     ''',nargs='*',required=False
-  ) 
+  )
   return parser.parse_known_args(args)
 
 def parsellate_aparc_aseg(nifty_file, aparc_fname, confounds=None):
@@ -55,7 +63,7 @@ def parsellate_aparc_aseg(nifty_file, aparc_fname, confounds=None):
   # Extract data from the aparc file
   aparc_array = np.array(aparc.dataobj)
   # Read in dataframe labeling which values to consider
-  value_df = pd.read_excel(f'{source_path}FreeSurferColorLUT_ValuesIn_aparc+aseg.xlsx')
+  value_df = pd.read_excel(f'{args.reference_path}FreeSurferColorLUT_ValuesIn_aparc+aseg.xlsx')
   # Extract labels to put in meta_dict for later use
   labels_to_use = list(value_df.loc[value_df['Use']==1, 'Label'])
   # ID values to set to 0 (to exclude)
@@ -79,7 +87,7 @@ start_time = dt.datetime.now()
 args, leftovers = parse_args(
   sys.argv[1:]
 )
-value_df = pd.read_excel(f'{source_path}FreeSurferColorLUT_ValuesIn_aparc+aseg.xlsx')
+value_df = pd.read_excel(f'{args.reference_path}FreeSurferColorLUT_ValuesIn_aparc+aseg.xlsx')
 # Extract labels to put in meta_dict for later use
 labels_to_use = list(value_df.loc[value_df['Use']==1, 'Label'])
 
