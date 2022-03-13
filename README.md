@@ -51,13 +51,13 @@ Most files will contain a commented link or links to further information. If you
 
   *Notebooks or code files documenting how to accomplish various processes*
   - Metadata Tracking
-    - uid_metadata_tracking.ipynb: 
+    - *uid_metadata_tracking.ipynb*: 
     
-      *There are at least as many naming conventions for files as there are researchers. Contrary to most naming conventions using abbreviations stringed together, this snippet describes a way to track as many researcher degrees of freedom (analysis metadata) as you would like, without lengthening the file name. Instead of attaching this metadata information to each file by embedding the information in the file name, the prefix or suffix on the file name is a unique identifier \{UID\} that points to a separate metadata file. This metadata file (\{UID\}_metadata.json) can contain as many key, value pairs as you want for any given pipeline. This removes any enticement to limit the number of metadata attributes saved on each run, further enabling reproducibility through clarity in analytic choices.*
+      There are at least as many naming conventions for files as there are researchers. Contrary to most naming conventions using abbreviations stringed together, this snippet describes a way to track as many researcher degrees of freedom (analysis metadata) as you would like, without lengthening the file name. Instead of attaching this metadata information to each file by embedding the information in the file name, the prefix or suffix on the file name is a unique identifier \{UID\} that points to a separate metadata file. This metadata file (\{UID\}_metadata.json) can contain as many key, value pairs as you want for any given pipeline. This removes any enticement to limit the number of metadata attributes saved on each run, further enabling reproducibility through clarity in analytic choices.
   - Running in Parallel
-    - calling_in_parallel_shell.ipynb: 
+    - *calling_in_parallel_shell.ipynb*: 
     
-      *This snippet provides an example of how to do so without the use of any non-generic packages or functions within a bash environment. This can enable you to make full use of the compute resources available without the additional overhead of installing other tools. The process can be divided into 3 main steps: 1) establishing the resource pool available to use, 2) defining a function to run in parallel if there are multiple components of a process that need to be run for each iteration, and 3) calling the function in parallel. This snippet will go through each process with an example which callas a python script using variables in nested for loops.*
+      This snippet provides an example of how to do so without the use of any non-generic packages or functions within a bash environment. This can enable you to make full use of the compute resources available without the additional overhead of installing other tools. The process can be divided into 3 main steps: 1) establishing the resource pool available to use, 2) defining a function to run in parallel if there are multiple components of a process that need to be run for each iteration, and 3) calling the function in parallel. This snippet will go through each process with an example which callas a python script using variables in nested for loops.
 
 
 ## Authors
